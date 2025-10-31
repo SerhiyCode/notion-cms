@@ -1,7 +1,6 @@
 
 export const handler = async function (event, context) {
     try {
-        // process.env працює - використовуємо його
         const NOTION_KEY = process.env.NOTION_KEY;
         const NOTION_DB = process.env.NOTION_DB;
 

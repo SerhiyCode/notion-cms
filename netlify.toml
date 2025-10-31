@@ -9,4 +9,5 @@
 
 [dev]
     targetPort = 5173
-    framework = "vite"
+    framework = "vite" 
+    
