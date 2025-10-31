@@ -107,18 +107,23 @@ body {
     text-align: center;
 }
 
-.card .card-content a { 
-    
+.card .card-content a {         
+    display: inline-block; 
+    text-decoration: none;
     background-color: #5D4037;
     color: white;
     width: max-content;
     padding: 8px 12px; 
     border-radius: 8px;
     margin-top: 12px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4p x 12px rgba(0, 0, 0, 0.1); 
     cursor: pointer;
+} 
 
+.card .card-content a:hover {
+    background-color: #4a3429; 
 }
+
 
 @media (max-width: 1280px) {
     body {
