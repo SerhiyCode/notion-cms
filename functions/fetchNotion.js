@@ -4,8 +4,9 @@ export const handler = async function (event, context) {
         const NOTION_KEY = process.env.NOTION_KEY;
         const NOTION_DB = process.env.NOTION_DB;
 
-        console.log('NOTION_KEY from env:', NOTION_KEY.substring(0, 10) + '...');
-        console.log('NOTION_DB from env:', NOTION_DB);
+        console.log('NOTION_KEY exists:', !!NOTION_KEY);
+        console.log('NOTION_DB exists:', !!NOTION_DB);
+
 
         const response = await fetch(`https://api.notion.com/v1/databases/${NOTION_DB}/query`, {
             method: 'POST',
