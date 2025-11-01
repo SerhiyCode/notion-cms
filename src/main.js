@@ -26,7 +26,7 @@ async function fetchDataFromAPIEndpoint() {
                         </div>
                         <h3>${card.properties.Name?.title?.[0]?.plain_text || 'Hangover Bar'}</h3>
                         <p class="cart-text"> 
-                            ${card.properties.content?.rich_text?.[0]?.plain_text || 'Молодіжний бар з коктейлями, закусками та настільними іграми.'}
+                            ${card.properties.content?.rich_text?.[0]?.plain_text || 'Молодіжний бар з коктейлями, закусками та настільними іграми'}
                         </p>         
                         <a href="${card.properties.Link?.rich_text?.[0]?.plain_text || '#'}" 
                            class="add-to-cart">
@@ -34,7 +34,7 @@ async function fetchDataFromAPIEndpoint() {
                         </a>
                     </div> 
                 </div>
-            `).join('');
+            `).join(''); 
     } catch (error) {
         console.error('Error:', error);
     }
