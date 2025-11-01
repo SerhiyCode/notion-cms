@@ -7,7 +7,6 @@ export const handler = async function (event, context) {
         console.log('NOTION_KEY exists:', !!NOTION_KEY);
         console.log('NOTION_DB exists:', !!NOTION_DB);
 
-
         const response = await fetch(`https://api.notion.com/v1/databases/${NOTION_DB}/query`, {
             method: 'POST',
             headers: {
@@ -40,5 +39,6 @@ export const handler = async function (event, context) {
         };
     }
 };
+
 
 
