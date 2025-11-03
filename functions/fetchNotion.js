@@ -5,7 +5,9 @@ export const handler = async function (event, context) {
         const NOTION_DB = process.env.NOTION_DB;
 
         console.log('NOTION_KEY exists:', !!NOTION_KEY);
-        console.log('NOTION_DB exists:', !!NOTION_DB);
+        console.log('NOTION_DB exists:', !!NOTION_DB);  
+
+        const timestamp = new Date().getTime();
 
         const response = await fetch(`https://api.notion.com/v1/databases/${NOTION_DB}/query`, {
             method: 'POST',
@@ -24,10 +26,10 @@ export const handler = async function (event, context) {
             })
         });
 
-        const data = await response.json();
+        const data = await response.json(); 
         
         return {
-            statusCode: 200,
+            statusCode: 200,             
             body: JSON.stringify(data)
         };
         

@@ -1,14 +1,14 @@
-import './style.css';
+// import './style.css';
 
 async function fetchDataFromAPIEndpoint() {
-    try {
+    try {  
         const response = await fetch('/.netlify/functions/fetchNotion');
         const data = await response.json();
         const cards = data.results; 
         
         document.querySelector('.container').innerHTML = cards
             .map((card) => `
-                   <div class="card">
+                             <div class="card">
                     <div class="card-image"> 
                         <img src="${card.properties.image?.files?.[0]?.external?.url || 'https://placebeard.it/200x100'}" 
                              alt="${card.properties.Name?.title?.[0]?.plain_text || ''}"
@@ -21,11 +21,13 @@ async function fetchDataFromAPIEndpoint() {
                             <i class="bx bx-star active"></i>
                             <i class="bx bx-star active"></i>
                             <i class="bx bx-star"></i>
-                        </div>
-                        <h3>${card.properties.Name?.title?.[0]?.plain_text || 'Hangover Bar'}</h3>
+                        </div> 
+                        <div class="content-info">
+                                 <h3>${card.properties.Name?.title?.[0]?.plain_text || 'Hangover Bar'}</h3>
                         <p class="cart-text"> 
                             ${card.properties.content?.rich_text?.[0]?.plain_text || ''}
-                        </p>         
+                        </p>  
+                        </div>                          
                         <a href="${card.properties.Link?.rich_text?.[0]?.plain_text || '#'}" 
                            class="add-to-cart">
                            ${card.properties.Btn__text?.rich_text?.[0]?.plain_text || 'Click link'}
