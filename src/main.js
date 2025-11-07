@@ -10,18 +10,14 @@ async function fetchDataFromAPIEndpoint() {
             .map((card) => `
                              <div class="card">
                     <div class="card-image"> 
-                        <img src="${card.properties.image?.files?.[0]?.external?.url || 'https://placebeard.it/200x100'}" 
+                        <img src="${card.properties.image?.files?.[0]?.external?.url || 'https://placehold.co/200x100/png'}" 
                              alt="${card.properties.Name?.title?.[0]?.plain_text || ''}"
                              class="card__image">
                     </div>
                     <div class="card-content"> 
-                        <div class="rating-stars">
-                            <i class="bx bx-star active"></i>
-                            <i class="bx bx-star active"></i>
-                            <i class="bx bx-star active"></i>
-                            <i class="bx bx-star active"></i>
-                            <i class="bx bx-star"></i>
-                        </div> 
+                 <div class="card-rating"> 
+                     <div class="rating-stars"> ⭐️⭐️⭐️ </div>
+                </div> 
                         <div class="content-info">
                                  <h3>${card.properties.Name?.title?.[0]?.plain_text || 'Hangover Bar'}</h3>
                         <p class="cart-text"> 
@@ -43,4 +39,3 @@ async function fetchDataFromAPIEndpoint() {
 
 
 fetchDataFromAPIEndpoint();
-
